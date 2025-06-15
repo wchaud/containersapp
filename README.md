@@ -36,10 +36,11 @@ Você tem um site simples com index.html e quer hospedá-lo no Azure usando Cont
 1. Estrutura dos arquivos
 
 site-html/
-│
-├── Dockerfile
-├── index.html
-└── styles.css
+
+ Dockerfile
+ index.html
+ styles.css
+ 
 index.html:
 
 <!DOCTYPE html>
@@ -53,6 +54,7 @@ index.html:
   <p>Este site está rodando no Azure Container Apps.</p>
 </body>
 </html>
+
 styles.css:
 
 body {
@@ -76,16 +78,17 @@ Copia seus arquivos HTML/CSS para a pasta padrão do Nginx (/usr/share/nginx/htm
 3. Construir e publicar a imagem
 Se você usa o Azure Container Registry (ACR):
 
-# Login no Azure e ACR
+Login no Azure e ACR
 az login
 az acr login --name <nome-do-registro>
 
-# Build da imagem
+Build da imagem
 docker build -t <nome-do-registro>.azurecr.io/meu-site-html:v1 .
 
-# Push da imagem
+Push da imagem
 docker push <nome-do-registro>.azurecr.io/meu-site-html:v1
-🚀 4. Criar o Azure Container App
+
+4. Criar o Azure Container App
 Você pode usar o portal, mas aqui vai via CLI:
 
 az containerapp env create \
