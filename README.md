@@ -41,11 +41,28 @@ site-html/
  index.html
  styles.css
  
-<pre> ```html <!DOCTYPE html> <html> <head> <title>Meu Site no Azure</title> <link rel="stylesheet" href="styles.css"> </head> <body> <h1>Olá, mundo!</h1> <p>Este site está rodando no Azure Container Apps.</p> </body> </html> ``` </pre>
+# Site Estático em Azure Container Apps
 
-styles.css:
+Este projeto é um exemplo simples de um site HTML/CSS hospedado no **Azure Container Apps** usando um container com **Nginx**.
 
-<pre> ```css body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; text-align: center; margin-top: 50px; } ``` </pre>
+---
+
+## Arquivos do Projeto
+
+### `index.html`
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Site no Azure</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Olá, mundo!</h1>
+  <p>Este site está rodando no Azure Container Apps.</p>
+</body>
+</html>
 
 2. Dockerfile
 Vamos usar o nginx como servidor para hospedar os arquivos estáticos:
