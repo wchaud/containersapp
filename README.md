@@ -30,17 +30,7 @@ Você não gerencia o Kubernetes nem precisa configurar balanceadores de carga, 
 O ambiente é seguro, isolado e pode ser integrado a outros serviços do Azure.
 
 Exemplo: Página HTML simples em Azure Container App
-Cenário:
-Você tem um site simples com index.html e quer hospedá-lo no Azure usando Container Apps.
 
-1. Estrutura dos arquivos
-
-site-html/
-
- Dockerfile
- index.html
- styles.css
- 
 # Site Estático em Azure Container Apps
 
 Este projeto é um exemplo simples de um site HTML/CSS hospedado no **Azure Container Apps** usando um container com **Nginx**.
@@ -64,7 +54,7 @@ Este projeto é um exemplo simples de um site HTML/CSS hospedado no **Azure Cont
 </body>
 </html>
 
-2. Dockerfile
+Dockerfile
 Vamos usar o nginx como servidor para hospedar os arquivos estáticos:
 
 FROM nginx:alpine
@@ -75,7 +65,7 @@ Usa a imagem leve do Nginx.
 
 Copia seus arquivos HTML/CSS para a pasta padrão do Nginx (/usr/share/nginx/html).
 
-3. Construir e publicar a imagem
+Construir e publicar a imagem
 Se você usa o Azure Container Registry (ACR):
 
 Login no Azure e ACR
@@ -88,7 +78,7 @@ docker build -t <nome-do-registro>.azurecr.io/meu-site-html:v1 .
 Push da imagem
 docker push <nome-do-registro>.azurecr.io/meu-site-html:v1
 
-4. Criar o Azure Container App
+Criar o Azure Container App
 Você pode usar o portal, mas aqui vai via CLI:
 
 az containerapp env create \
@@ -106,7 +96,7 @@ az containerapp create \
   --registry-server <nome-do-registro>.azurecr.io \
   --cpu 0.5 --memory 1.0Gi
   
-5. Resultado final
+Resultado final
 Você receberá uma URL como:
 
 https://meu-site-html.eastus.azurecontainerapps.io
